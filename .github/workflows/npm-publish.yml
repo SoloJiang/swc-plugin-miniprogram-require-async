@@ -32,17 +32,17 @@ jobs:
         run: |
           rustup target add wasm32-wasi
 
-      - name: Build release target
-        shell: bash
-        run: |
-          cargo build
-
       - name: Test Cases
         shell: bash
         run: |
           cargo test
         env:
           MACOSX_DEPLOYMENT_TARGET: "10.13"
+
+      - name: Build release target
+        shell: bash
+        run: |
+          npm run build
 
       - name: List files
         shell: bash
