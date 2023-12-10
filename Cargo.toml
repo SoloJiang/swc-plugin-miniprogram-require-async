@@ -1,0 +1,25 @@
+[package]
+name = "swc_plugin_miniprogram_require_async"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[profile.release]
+lto = true
+
+[dependencies]
+serde = "1"
+swc_core = { version = "0.86.*", features = ["ecma_plugin_transform"] }
+swc_common = "0.33.12"
+swc_ecma_parser = "0.141.32"
+swc_ecma_transforms_base = "0.134.55"
+
+[dev-dependencies]
+swc_ecma_transforms_testing = "0.137.57"
+testing = "0.35.10"
+tracing = { version="0.1", features = ["release_max_level_info"] }
+# .cargo/config defines few alias to build plugin.
+# cargo build-wasi generates wasm-wasi32 binary
+# cargo build-wasm32 generates wasm32-unknown-unknown binary.

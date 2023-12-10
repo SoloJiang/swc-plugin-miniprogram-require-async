@@ -1,0 +1,14 @@
+{
+    "name": "swc-plugin-miniprogram-require-async",
+    "version": "0.1.0",
+    "description": "swc plugin for transform dynamic import to require.async in miniprogram",
+    "author": "SoloJiang",
+    "license": "ISC",
+    "keywords": ["swc-plugin"],
+    "main": "swc_plugin_miniprogram_require_async.wasm",
+    "files": ["swc_plugin_miniprogram_require_async.wasm"],
+    "scripts": {
+        "prepublishOnly": "cargo build-wasi --release && cp target/wasm32-wasi/release/swc_plugin_miniprogram_require_async.wasm ."
+    },
+    "preferUnplugged": true
+}

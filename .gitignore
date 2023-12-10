@@ -1,0 +1,4 @@
+/target
+^target/
+target
+swc_plugin_miniprogram_require_async.wasm
